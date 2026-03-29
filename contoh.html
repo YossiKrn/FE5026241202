@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabar Nusantara - Liputan Khusus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            font-family: 'Georgia', serif; 
+            background-color: #f4f4f4;
+            color: #222;
+        }
+        
+        .header-berita {
+            background-color: #8b0000; 
+            color: white;
+            padding: 20px 0;
+            border-bottom: 5px solid #222;
+        }
+
+        .main-content {
+            background-color: white;
+            padding: 30px;
+            margin-top: -20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-family: 'Arial', sans-serif; 
+        }
+
+        .tab-content {
+            padding: 25px 15px;
+            min-height: 200px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+        }
+
+        .judul-artikel {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+
+        .panel-interaktif {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-berita">
+        <div class="container">
+            <h1 class="font-weight-bold">KABAR NUSANTARA</h1>
+            <p class="mb-0">LIPUTAN KHUSUS: KTT Teknologi Nasional 2026</p>
+        </div>
+    </header>
+
+    <div class="container mb-5">
+        <div class="main-content">
+            
+            <ul class="nav nav-tabs font-weight-bold" id="liputanTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active text-danger" id="utama-tab" data-toggle="tab" href="#utama" role="tab">Headline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" id="langsung-tab" data-toggle="tab" href="#langsung" role="tab">Live Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" id="analisis-tab" data-toggle="tab" href="#analisis" role="tab">Analisis Pakar</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="liputanTabsContent">
+                
+                <div class="tab-pane fade show active" id="utama" role="tabpanel">
+                    <span class="badge badge-danger mb-2">HOT NEWS</span>
+                    <h2 class="judul-artikel">Pemerintah Sahkan Regulasi Baru Terkait Kecerdasan Buatan</h2>
+                    <p class="text-muted small">Reporter: Tim Redaksi | 24 Maret 2026 - 10:00 WIB</p>
+                    <p>Dalam penutupan Konferensi Tingkat Tinggi (KTT) Teknologi hari ini, pemerintah resmi mengesahkan kerangka regulasi baru yang mengatur penggunaan AI di sektor publik dan swasta. Regulasi ini difokuskan pada transparansi algoritma dan perlindungan data masyarakat.</p>
+                </div>
+
+                <div class="tab-pane fade" id="langsung" role="tabpanel">
+                    <span class="badge badge-warning mb-2 text-dark">🔴 LIVE STREAM</span>
+                    <h2 class="judul-artikel">Suasana Terkini dari Ruang Sidang Utama KTT</h2>
+                    <p class="text-muted small">Reporter: Lapangan | Diperbarui 2 menit yang lalu</p>
+                    <p><strong>10:45 WIB:</strong> Para delegasi mulai meninggalkan ruangan. Diskusi panel terakhir mengenai masa depan energi terbarukan baru saja ditutup. Suasana di luar aula utama tampak dipenuhi oleh wartawan yang menunggu konferensi pers penutup.</p>
+                </div>
+
+                <div class="tab-pane fade" id="analisis" role="tabpanel">
+                    <span class="badge badge-info mb-2">OPINI PAKAR</span>
+                    <h2 class="judul-artikel">Dampak Regulasi AI Terhadap Startup Lokal</h2>
+                    <p class="text-muted small">Oleh: Dr. Budi Santoso, Pengamat Teknologi</p>
+                    <p>Pengesahan regulasi AI ini ibarat pisau bermata dua bagi perusahaan rintisan (startup) di tanah air. Di satu sisi, ini memberikan kepastian hukum. Namun di sisi lain, biaya untuk mematuhi standar keamanan data yang baru bisa memberatkan startup yang masih berada di tahap pendanaan awal.</p>
+                </div>
+
+            </div>
+
+            <div class="panel-interaktif">
+                <h5 class="mb-3 text-secondary border-bottom pb-2">Navigasi Interaktif</h5>
+                
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <p class="small font-weight-bold mb-2">Pintas ke Topik Pilihan:</p>
+                        <button class="btn btn-outline-danger btn-sm mb-1" id="btn-headline">Kembali ke Headline</button>
+                        <button class="btn btn-outline-info btn-sm mb-1" id="btn-pakar">Baca Analisis Pakar</button>
+                    </div>
+
+                    <div class="col-md-7">
+                        <p class="small font-weight-bold mb-2">Status Halaman Terkini:</p>
+                        <div class="alert alert-secondary py-2 mb-0" id="kotak-log" style="font-size: 0.9rem;">
+                            <em>Menunggu interaksi... Klik salah satu tab berita di atas.</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            
+            // --- IMPLEMENTASI: JS METHODS ---
+            $('#btn-headline').click(function() {
+                $('.nav-tabs a:first').tab('show'); // Memilih tab urutan pertama
+            });
+
+            $('#btn-pakar').click(function() {
+                $('.nav-tabs a[href="#analisis"]').tab('show'); // Memilih tab berdasarkan ID
+            });
+
+
+            // --- IMPLEMENTASI: JS EVENTS ---
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (event) {
+                
+                var tabAktif = $(event.target).text();
+                var tabLama = $(event.relatedTarget).text();
+                
+var pesan = "<strong>Sistem:</strong> Anda sedang beralih dari halaman <em>" + tabLama + "</em> ke liputan <em>" + tabAktif + "</em>.";
+                
+                $('#kotak-log').removeClass('alert-secondary').addClass('alert-success').html(pesan);
+                
+                $('.nav-link').removeClass('text-danger').addClass('text-dark');
+                $(event.target).removeClass('text-dark').addClass('text-danger');
+            });
+
+        });
+    </script>
+</body>
+</html>
